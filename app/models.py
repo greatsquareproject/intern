@@ -3,8 +3,8 @@ from datetime import datetime
 
 # Create your models here.
 class seller(models.Model):
-    Companyname = models.CharField(max_length=250, default="Yogaa Infrastructure Ptv Ltd,.")
-    address = models.CharField(max_length=150, default="521-3-1, 1, 1/521-3-1, 8th St, Poriyalar Nagar, Tiruppalai, Madurai, Tamil Nadu 625014")
+    Companyname = models.CharField(max_length=250, default="Construct")
+    address = models.CharField(max_length=150, default="Madurai")
     phone = models.IntegerField(default='+91 9900809781')
     date = models.DateField(default=datetime.now)
 

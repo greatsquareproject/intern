@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<body class="body-bg">
+    
 
   <div id="pt">
       <div class="container mt-5">
@@ -110,23 +112,33 @@
 
     </table>
     <style>
-        .watermark {
-            position: absolute;
-            top: 50%;
-            left: 40%;
-            transform: translate(-50%, -50%) rotate(-45deg); /* Adding rotation */
-            transform-origin: top left; /* Set rotation origin */
-            font-size: 40px;
-            color: rgba(0, 0, 0, 0.2);
-            z-index: 0;
-            pointer-events: none;
+
+        .body-bg{
+            background-image: url("https://www.svgbackgrounds.com/wp-content/uploads/2021/05/liquid-cheese-yellow-background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 10;
         }
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: rgba(0, 0, 0, 0.2);
+            transform: rotate(-45deg);
+            pointer-events: none;
+              }
     </style>
     <button onclick="myfun('pt')" class="btn btn-primary mt-3">Get Bill</button>
 </div>
 
 </div>
-
+</body>
 <script type="text/javascript">
     function myfun(pa){
     var bk = document.body.innerHTML;

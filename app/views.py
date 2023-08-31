@@ -1,7 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from  . models import seller,buyer, products
+from . forms import ProductForm
 import datetime
 
+def product_create(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = ProductForm()
+    return render(request, 'product_form.html', {'form': form})
 
 def index(request):
     pro = products.objects.all()
